@@ -35,18 +35,29 @@ def makeWebhookResult(req):
     zone = parameters.get("feeling")
     if(zone=="sad"):
         speech = "how can I cheer you up?"
-    elif(zone=="happy"):
-        speech = "Yay! So tell me what made you happy."
-    print("Response:")
-    print(speech)
+        print("Response:")
+        print(speech)
 
-    return {
+        return {
         "speech": speech,
         "displayText": speech,
         #"data": {},
         # "contextOut": [],
         "source": "apiai-onlinestore-shipping"
-    }
+        }
+    elif(zone=="happy"):
+        speech = "Yay! So tell me what made you happy."
+        print("Response:")
+        print(speech)
+
+        return {
+        "speech": speech,
+        "displayText": speech,
+        #"data": {},
+        # "contextOut": [],
+        "source": "apiai-onlinestore-shipping"
+        }
+   
 
 
 
