@@ -28,35 +28,34 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "feeling":
-        return {}
-    result = req.get("result")
-    parameters = result.get("parameters")
-    zone = parameters.get("feeling")
-    if(zone=="sad"):
-        speech = "how can I cheer you up?"
-        print("Response:")
-        print(speech)
+    if req.get("result").get("action") == "feeling":
+        result = req.get("result")
+        parameters = result.get("parameters")
+        zone = parameters.get("feeling")
+        if(zone=="sad"):
+            speech = "how can I cheer you up?"
+            print("Response:")
+            print(speech)
 
-        return {
-        "speech": speech,
-        "displayText": speech,
-        #"data": {},
-        # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
-        }
-    elif(zone=="happy"):
-        speech = "Yay! So tell me what made you happy."
-        print("Response:")
-        print(speech)
+            return {
+            "speech": speech,
+            "displayText": speech,
+            #"data": {},
+            # "contextOut": [],
+            "source": "apiai-onlinestore-shipping"
+            }
+        elif(zone=="happy"):
+            speech = "Yay! So tell me what made you happy."
+            print("Response:")
+            print(speech)
 
-        return {
-        "speech": speech,
-        "displayText": speech,
-        #"data": {},
-        # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
-        }
+            return {
+            "speech": speech,
+            "displayText": speech,
+            #"data": {},
+            # "contextOut": [],
+            "source": "apiai-onlinestore-shipping"
+            }
    
 
 
