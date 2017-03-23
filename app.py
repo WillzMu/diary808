@@ -31,7 +31,7 @@ def makeWebhookResult(req):
     if req.get("result").get("action") == "feeling":
         result = req.get("result")
         parameters = result.get("parameters")
-        zone = parameters.get("give.feeling")
+        zone = parameters.get("feeling")
         mood = {'sad':10, 'happy':8, 'eggs':20, 'sugar':11,'yoghurt':13}
         speech = "The cost of  " + zone + " is K" + str(mood[zone]) + "."
         print("Response:")
