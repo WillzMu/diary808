@@ -32,34 +32,18 @@ def makeWebhookResult(req):
         result = req.get("result")
         parameters = result.get("parameters")
         zone = parameters.get("feeling")
-        if(zone=="sad"):
-            speech = "how can I cheer you up?"
-            print("Response:")
-            print(speech)
-
-            return {
+        mood = {'sad':"Let me cheer you up!", 'happy':"let's party!"}
+        speech = str(mood[zone])
+        print("Response:")
+        print(speech)
+        return {
             "speech": speech,
             "displayText": speech,
             #"data": {},
             # "contextOut": [],
-            "source": "apiai-onlinestore-shipping"
-            }
-        elif(zone=="happy"):
-            speech = "Yay! So tell me what made you happy."
-            print("Response:")
-            print(speech)
-
-            return {
-            "speech": speech,
-            "displayText": speech,
-            #"data": {},
-            # "contextOut": [],
-            "source": "apiai-onlinestore-shipping"
-            }
-   
-
-
-
+            "source": "apiai-DiaryBot"
+        }
+       
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
