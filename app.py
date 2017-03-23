@@ -32,8 +32,8 @@ def makeWebhookResult(req):
         result = req.get("result")
         parameters = result.get("parameters")
         zone = parameters.get("feeling")
-        mood = {'sad':"Let me cheer you up!", 'happy':"let's party!"}
-        speech = str(mood[zone])
+        mood = {'sad':10, 'happy':8, 'eggs':20, 'sugar':11,'yoghurt':13}
+        speech = "The cost of  " + zone + " is K" + str(mood[zone]) + "."
         print("Response:")
         print(speech)
         return {
@@ -42,8 +42,9 @@ def makeWebhookResult(req):
             #"data": {},
             # "contextOut": [],
             "source": "apiai-DiaryBot"
-        }
-       
+                }
+    
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
