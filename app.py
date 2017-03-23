@@ -33,10 +33,10 @@ def makeWebhookResult(req):
     result = req.get("result")
     parameters = result.get("parameters")
     zone = parameters.get("feeling")
-    if(zone=='sad'):
+    if(zone=="sad"):
         speech = "how can I cheer you up?"
-    elif(zone=='happy'):
-        speech = "Yay!So tell me what made you happy."
+    elif(zone=="happy"):
+        speech = "Yay! So tell me what made you happy."
     print("Response:")
     print(speech)
 
